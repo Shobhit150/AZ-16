@@ -22,22 +22,28 @@ ll mod_sub(ll a, ll b) { return (a % MOD - b % MOD + MOD) % MOD; }
 ll mod_mul(ll a, ll b) { return (a % MOD * b % MOD) % MOD; }
 
 void solve() {
-    ll n;
+    int n;
     cin >> n;
-    string a;
-    cin >> a;
-    ll sumi = 0;
+    int arr[n];
+
     for(int i=0;i<n;i++) {
-        sumi += (a[i] - '0');
+        cin >> arr[i];
     }
-    cout << sumi << "\n";
+    for(int i=0;i<n;i++) {
+        int maxi = arr[i];
+        for(int j=i;j<n;j++) {
+            maxi = max(maxi, arr[j]);
+            cout << maxi << " ";
+        }
+    }
+    cout << "\n";
 }
 
 int main() {
     fastio
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     while (t--) {
         solve();
