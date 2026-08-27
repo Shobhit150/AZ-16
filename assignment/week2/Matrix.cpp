@@ -3,27 +3,15 @@
 using namespace std;
 
 void solve() {
-    int n;
-    cin >> n;
-    int a = 0;
-    int b = 0;
-    for(int i=0;i<n;i++) {
-        for(int j=0;j<n;j++) {
-            int c;
-            cin >> c;
-            if(i==j) a+=c;
-            if(i+j == (n-1)) b += c;
-        }
-        // cout << a << " " << b << "₹";
-    }
-    // cout << a << " " << b << "\n";
-    cout << abs(a-b) << "\n";
+    
 }
 
 int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
 
     while (t--) {
         solve();
