@@ -5,29 +5,29 @@ using namespace std;
 
 int MOD = 1e9+7;
 
-
-int binpow(int a, int b, int mod) {
-    long long res = 1;
+int binpow(int a, int b) {
+    int res = 1;
     while(b) {
-        if(b%2==1) res = (res*a)%mod;
-        a = (a*a)%mod;
+        if(b%2==1) res = (res*a)%MOD;
+        a = (a*a)%MOD;
         b >>= 1;
     }
-    return res%mod;
+    return res;
 }
 
 void solve() {
-    int a,b,c,p;
-    cin >> a >> b >> c >> p;
-    int z = binpow(b,c,MOD);
-    cout << binpow(a,z,p) << "\n";
+    int n;
+    cin >> n;
+    int ans = (binpow(27,n) - binpow(7,n) + MOD)%MOD;
+    cout << ans << "\n";
+
 }
 
 signed main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int t = 1;
-    cin >> t;
+    // cin >> t;
 
     while (t--) {
         solve();
